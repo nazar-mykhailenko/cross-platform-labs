@@ -18,11 +18,7 @@ catch (FormatException)
 {
     Console.WriteLine("Error when parsing input!");
 }
-catch (ArgumentException e)
+catch (Exception e)
 {
     Console.WriteLine(e.Message);
-}
-catch (Exception)
-{
-    Console.WriteLine("Unknown error!");
 }
