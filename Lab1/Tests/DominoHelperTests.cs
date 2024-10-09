@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using App;
 using Xunit.Abstractions;
 
-namespace Lab1.Tests
+namespace Tests
 {
     public class DominoHelperTests(ITestOutputHelper output)
     {

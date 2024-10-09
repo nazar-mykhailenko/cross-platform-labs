@@ -1,4 +1,4 @@
-namespace Lab1
+namespace App
 {
     public static class DominoHelper
     {
@@ -6,7 +6,7 @@ namespace Lab1
         {
             if (n > 10000)
             {
-                throw new System.ArgumentException("n must be less than or equal to 10000");
+                throw new ArgumentException("n must be less than or equal to 10000");
             }
 
             if (n == 0)

@@ -1,4 +1,4 @@
-namespace Lab1
+namespace App
 {
     public static class Combinatorics
     {
@@ -6,7 +6,7 @@ namespace Lab1
         {
             if (n == 0)
             {
-                return 0; 
+                return 0;
             }
 
             if (n == 1)

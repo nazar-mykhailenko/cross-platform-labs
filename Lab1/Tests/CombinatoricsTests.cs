@@ -1,7 +1,8 @@
+using App;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Lab1.Tests
+namespace Tests
 {
     public class CombinatoricsTests(ITestOutputHelper output)
     {

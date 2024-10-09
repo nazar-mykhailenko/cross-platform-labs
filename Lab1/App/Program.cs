@@ -1,4 +1,4 @@
-﻿using Lab1;
+﻿using App;
 
 const string FileName = "./INPUT.TXT";
 const string OutputFileName = "./OUTPUT.TXT";
