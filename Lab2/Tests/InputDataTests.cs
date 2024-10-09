@@ -2,10 +2,11 @@ using Xunit;
 using Moq;
 using System.Collections.Generic;
 using App;
+using Xunit.Abstractions;
 
 namespace Tests
 {
-    public class InputDataTests
+    public class InputDataTests(ITestOutputHelper output)
     {
         [Fact]
         public void ReadFromFile_CorrectInput_ParsesSuccessfully()
@@ -24,6 +25,7 @@ namespace Tests
 
             // Act
             InputData inputData = InputData.ReadFromFile("fakepath.txt", mockFileReader.Object);
+            output.WriteLine("Read input data: " + inputData);
 
             // Assert
             Assert.Equal(10, inputData.N);

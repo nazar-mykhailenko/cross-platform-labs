@@ -41,5 +41,10 @@ namespace App
                 ForbiddenMonthDays = forbiddenMonthDays
             };
         }
+
+        public override string ToString()
+        {
+            return $"N: {N}, K: {K}, W: {W}, DW: {DW}, S: {S}, ForbiddenWeekdays: {string.Join(", ", ForbiddenWeekdays)}, ForbiddenMonthDays: {string.Join(", ", ForbiddenMonthDays)}";
+        }
     }
 }

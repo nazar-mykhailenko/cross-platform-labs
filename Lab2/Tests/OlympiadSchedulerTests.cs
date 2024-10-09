@@ -1,10 +1,11 @@
 using Xunit;
 using System.Collections.Generic;
 using App;
+using Xunit.Abstractions;
 
 namespace Tests
 {
-    public class OlympiadSchedulerTests
+    public class OlympiadSchedulerTests(ITestOutputHelper output)
     {
         [Fact]
         public void CountValidWays_ExampleScenario_ReturnsCorrectCount()
@@ -21,9 +22,11 @@ namespace Tests
             };
 
             Validator validator = new(inputData);
-
+            output.WriteLine("Input data: " + inputData);
             // Act
             int validWays = OlympiadScheduler.CountValidWays(inputData, validator);
+
+            output.WriteLine("Valid ways: " + validWays);
 
             // Assert
             Assert.Equal(15, validWays);
@@ -44,9 +47,11 @@ namespace Tests
             };
 
             Validator validator = new(inputData);
+            output.WriteLine("Input data: " + inputData);
 
             // Act
             int validWays = OlympiadScheduler.CountValidWays(inputData, validator);
+            output.WriteLine("Valid ways: " + validWays);
 
             // Assert
             Assert.Equal(2, validWays);
@@ -67,9 +72,11 @@ namespace Tests
             };
 
             Validator validator = new(inputData);
+            output.WriteLine("Input data: " + inputData);
 
             // Act
             int validWays = OlympiadScheduler.CountValidWays(inputData, validator);
+            output.WriteLine("Valid ways: " + validWays);
 
             // Assert
             Assert.Equal(0, validWays);
@@ -90,9 +97,11 @@ namespace Tests
             };
 
             Validator validator = new(inputData);
+            output.WriteLine("Input data: " + inputData);
 
             // Act
             int validWays = OlympiadScheduler.CountValidWays(inputData, validator);
+            output.WriteLine("Valid ways: " + validWays);
 
             // Assert
             Assert.Equal(9, validWays);

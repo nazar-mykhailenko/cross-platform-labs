@@ -2,10 +2,11 @@ using Xunit;
 using System.Collections.Generic;
 using App;
 using System.Configuration.Assemblies;
+using Xunit.Abstractions;
 
 namespace Tests
 {
-    public class ValidatorTests
+    public class ValidatorTests(ITestOutputHelper output)
     {
         [Fact]
         public void IsValidDay_ValidDay_ReturnsTrue()
@@ -22,9 +23,12 @@ namespace Tests
             };
 
             Validator validator = new(inputData);
+            output.WriteLine("Input data: " + inputData);
 
             // Act
             bool isValid = validator.IsValidDay(1);
+            output.WriteLine("Tested day: 1");
+            output.WriteLine("Is valid: " + isValid);
 
             // Assert
             Assert.True(isValid);
@@ -45,9 +49,12 @@ namespace Tests
             };
 
             Validator validator = new(inputData);
+            output.WriteLine("Input data: " + inputData);
 
             // Act
             bool isValid = validator.IsValidDay(6);
+            output.WriteLine("Tested day: 6");
+            output.WriteLine("Is valid: " + isValid);
 
             // Assert
             Assert.False(isValid);
@@ -68,9 +75,12 @@ namespace Tests
             };
 
             Validator validator = new(inputData);
+            output.WriteLine("Input data: " + inputData);
 
             // Act
             bool isValid = validator.IsValidDay(15);
+            output.WriteLine("Tested day: 15");
+            output.WriteLine("Is valid: " + isValid);
 
             // Assert
             Assert.False(isValid);
@@ -89,6 +99,8 @@ namespace Tests
                 ForbiddenWeekdays = [],
                 ForbiddenMonthDays = []
             };
+
+            output.WriteLine("Input data: " + inputData);
 
             // Act & Assert
             Assert.Throws<System.ArgumentException>(() => new Validator(inputData));
