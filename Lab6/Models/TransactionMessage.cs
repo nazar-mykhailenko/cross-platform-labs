@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace Lab6.Models;
 public class TransactionMessage
 {
@@ -15,6 +17,7 @@ public class TransactionMessage
     public string Location { get; set; } = null!;
     public string PartyRole { get; set; } = null!;
 
+    [JsonIgnore]
     public Account Account { get; set; } = null!;
     public Party Party { get; set; } = null!;
     public RefTransactionType RefTransactionType { get; set; } = null!;

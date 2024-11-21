@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace Lab6.Models;
 
 public class Account
@@ -11,6 +13,7 @@ public class Account
     public int CustomerId { get; set; }
     public int AccountTypeCode { get; set; }
 
+    [JsonIgnore]
     public Customer Customer { get; set; } = null!;
     public RefAccountType RefAccountType { get; set; } = null!;
     public ICollection<TransactionMessage> TransactionMessages { get; set; } = null!;
