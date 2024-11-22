@@ -10,11 +10,11 @@ namespace Lab6.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class CustomerController : ControllerBase
+public class CustomersController : ControllerBase
 {
     private readonly AppDbContext _context;
 
-    public CustomerController(AppDbContext context)
+    public CustomersController(AppDbContext context)
     {
         _context = context;
     }

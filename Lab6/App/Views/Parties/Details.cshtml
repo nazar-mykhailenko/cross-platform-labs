@@ -1,0 +1,15 @@
+@model Party
+
+<h1>Party Details</h1>
+
+<table>
+    @foreach (var property in Model.GetType().GetProperties())
+    {
+        <tr>
+            <td><strong>@property.Name</strong></td>
+            <td>@property.GetValue(Model, null)</td>
+        </tr>
+    }
+</table>
+
+<a asp-action="Index">Back to List</a>

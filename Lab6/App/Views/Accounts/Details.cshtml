@@ -1,0 +1,11 @@
+@model Account
+
+<h1>Account Details</h1>
+
+<p><strong>Account ID:</strong> @Model.AccountId</p>
+<p><strong>Name:</strong> @Model.AccountName</p>
+<p><strong>Type:</strong> @Model.RefAccountType.AccountTypeDescription</p>
+<p><strong>Date Opened:</strong> @Model.DateOpened.ToShortDateString()</p>
+<p><strong>Current Balance:</strong> @Model.CurrentBalance</p>
+
+<a asp-action="Index">Back to List</a>

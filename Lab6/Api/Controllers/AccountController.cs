@@ -10,18 +10,17 @@ namespace Lab6.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class AccountController : ControllerBase
+public class AccountsController : ControllerBase
 {
     private readonly AppDbContext _context;
 
-    public AccountController(AppDbContext context)
+    public AccountsController(AppDbContext context)
     {
         _context = context;
     }
 
     [HttpGet()]
     public async Task<ActionResult<IEnumerable<Account>>> Search(
-        [FromQuery] List<int>? ids = null,
         [FromQuery] DateTime? startDate = null,
         [FromQuery] DateTime? endDate = null,
         [FromQuery] decimal? minBalance = null,
@@ -35,11 +34,6 @@ public class AccountController : ControllerBase
             .Include(a => a.TransactionMessages)
             .Include(a => a.RefAccountType)
             .AsQueryable();
-
-        if (ids != null && ids.Any())
-        {
-            query = query.Where(a => ids.Contains(a.AccountId));
-        }
 
         if (startDate.HasValue)
         {

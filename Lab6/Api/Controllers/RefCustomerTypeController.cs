@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 [Route("api/[controller]")]
 [ApiController]
-public class RefCustomerTypeController : ControllerBase
+public class RefCustomerTypesController : ControllerBase
 {
     private readonly AppDbContext _context;
 
-    public RefCustomerTypeController(AppDbContext context)
+    public RefCustomerTypesController(AppDbContext context)
     {
         _context = context;
     }

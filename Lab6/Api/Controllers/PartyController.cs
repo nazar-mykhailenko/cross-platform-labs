@@ -9,11 +9,11 @@ namespace Lab6.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class PartyController : ControllerBase
+public class PartiesController : ControllerBase
 {
     private readonly AppDbContext _context;
 
-    public PartyController(AppDbContext context)
+    public PartiesController(AppDbContext context)
     {
         _context = context;
     }

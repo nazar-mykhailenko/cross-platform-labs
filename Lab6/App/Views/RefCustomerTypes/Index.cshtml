@@ -1,0 +1,29 @@
+@model List<RefCustomerType> 
+
+<h1>RefCustomerTypes</h1>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            @foreach (var property in typeof(RefCustomerType).GetProperties())
+            {
+                <th>@property.Name</th>
+            }
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @foreach (var property in typeof(RefCustomerType).GetProperties())
+                {
+                    <td>@property.GetValue(item, null)</td>
+                }
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.CustomerTypeCode">View Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
